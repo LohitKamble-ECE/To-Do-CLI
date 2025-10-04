@@ -1,8 +1,10 @@
+import datetime as dt
+
 import typer as t
-import utils as ut
+
 import database as db
 import render as r
-import datetime as dt
+import utils as ut
 
 app = t.Typer()
 

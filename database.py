@@ -1,6 +1,5 @@
-from sqlite3 import connect
-from sqlite3 import Row
 from pathlib import Path
+from sqlite3 import Row, connect
 
 DB_FILE = Path(r"tasks.db")
 
