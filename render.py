@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.table import Table
-from utils import get_priority_string
-from utils import get_status_string
+
+import utils as ut
 
 
 def print_tasks(tasks):
@@ -19,22 +19,13 @@ def print_tasks(tasks):
     table.add_column("Priority", style="blue", no_wrap=True)
     table.add_column("Status", style="blue", no_wrap=True)
 
-    try:
-        for task in tasks:
-            table.add_row(
-                str(task["id"]),
-                task["title"],
-                task["due"],
-                get_priority_string(task["priority"]),
-                get_status_string(task["status"]),
-            )
-    except Exception:
+    for task in tasks:
         table.add_row(
             str(task["id"]),
             task["title"],
             task["due"],
-            get_priority_string(task["priority"]),
-            get_status_string(task["status"]),
+            ut.get_priority_string(task["priority"]),
+            ut.get_status_string(task["status"]),
         )
 
     console.print(table)
